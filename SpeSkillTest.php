@@ -54,8 +54,12 @@ class SpeSkillTest {
             $result = $array[$indexODD]." (the only odd number) ";
         } else if (sizeof($arrayEven)==1){
             $result = $array[$indexEven]." (the only even number)";
-        } else {
+        } else if (sizeof($arrayEven)==sizeof($array)){
+            $result = "false (all even integer, no outlier)";
+        } else if (sizeof($arrayODD)==sizeof($array)) {
             $result = "false (all odd integer, no outlier)";
+        } else {
+            $result = "false";
         }
 
         return $result;
